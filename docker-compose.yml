@@ -1,28 +1,28 @@
-version: '3.4'
-
-services:
-  appimage:
-    image: openjdk:17
-    container_name: app-image-container
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./target/LibraryProject-0.0.1-SNAPSHOT.jar/:/tmp/LibraryProject-0.0.1-SNAPSHOT.jar
-    command: ['java', '-jar', '/tmp/LibraryProject-0.0.1-SNAPSHOT.jar']
-
-  databaseimage:
-    image: cassandra
-    container_name: database-container
-    ports:
-      - "9042:9042"
-    volumes:
-      - ./data.cql/:/tmp/data.cql
-      - ./data.sh/:/tmp/data.sh
-#    entrypoint: ["sh", "-c", "chmod +x /tmp/data.sh", "sh /tmp/data.sh"]
-#    command: tmp/data.cql
-#    command: /bin/sh /tmp/data.sh
-#    command: /bin/sh -c "data.sh"
-
-
-
-
+# version: '3.4'
+#
+# services:
+#   appimage:
+#     image: openjdk:17
+#     container_name: app-image-container
+#     ports:
+#       - "8081:8081"
+#     volumes:
+#       - ./target/LibraryProject-0.0.1-SNAPSHOT.jar/:/tmp/LibraryProject-0.0.1-SNAPSHOT.jar
+#     command: ['java', '-jar', '/tmp/LibraryProject-0.0.1-SNAPSHOT.jar']
+#
+#   databaseimage:
+#     image: cassandra
+#     container_name: database-container
+#     ports:
+#       - "9042:9042"
+#     volumes:
+#       - ./data.cql/:/tmp/data.cql
+#       - ./data.sh/:/tmp/data.sh
+# #    entrypoint: ["sh", "-c", "chmod +x /tmp/data.sh", "sh /tmp/data.sh"]
+# #    command: tmp/data.cql
+# #    command: /bin/sh /tmp/data.sh
+# #    command: /bin/sh -c "data.sh"
+#
+#
+#
+#
