@@ -1,5 +1,4 @@
 package com.example.libraryproject;
-import com.example.libraryproject.model.Users;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;

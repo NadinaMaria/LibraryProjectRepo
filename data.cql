@@ -3,7 +3,7 @@ CREATE KEYSPACE IF NOT EXISTS library WITH REPLICATION = { 'class' : 'SimpleStra
 
 -- Create a table
 CREATE TABLE IF NOT EXISTS library.users (
-    username VARCHAR PRIMARY KEY,
+    userName VARCHAR PRIMARY KEY,
     name VARCHAR,
     email VARCHAR,
     password VARCHAR
