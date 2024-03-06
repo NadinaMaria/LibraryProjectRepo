@@ -11,17 +11,17 @@ CREATE TABLE IF NOT EXISTS library.users (
 
 -- Insert some data
 INSERT INTO library.users
-(userid, name, email, password)
+(userName, name, email, password)
 VALUES ('9878', 'John', 'Robinson', 'john1');
 INSERT INTO library.users
-(userid, name, email, password)
+(userName, name, email, password)
 VALUES ('9876', 'Ryan', 'Anderson', 'ryan1');
 INSERT INTO library.users
-(userid, name, email, password)
+(userName, name, email, password)
 VALUES ('9874', 'Ellen', 'Scott', 'ellen1');
 INSERT INTO library.users
-(userid, name, email, password)
+(userName, name, email, password)
 VALUES ('9873', 'Michelle', 'Obama', 'michelle1');
 INSERT INTO library.users
-(userid, name, email, password)
+(userName, name, email, password)
 VALUES ('9872', 'Sophie', 'Adam', 'sophie1');

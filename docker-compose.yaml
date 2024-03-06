@@ -1,14 +1,14 @@
 version: '3.4'
-
 services:
-  appimage:
-    image: openjdk:17
+  ceva:
+    image: appimage
     container_name: app-image-container
     ports:
       - "8080:8080"
     volumes:
       - ./target/LibraryProject-0.0.1-SNAPSHOT.jar/:/tmp/LibraryProject-0.0.1-SNAPSHOT.jar
     command: ['java', '-jar', '/tmp/LibraryProject-0.0.1-SNAPSHOT.jar']
+#     restart: always
 
   databaseimage:
     image: cassandra
