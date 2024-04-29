@@ -4,15 +4,20 @@ import lombok.*;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.text.DateFormat;
+
 @Table
-@Data //
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Book {
+public class Users {
 
     @PrimaryKey
     private int id;
-    private String title;
+    private String username;
+    private String password;
+//    private DateFormat creation;
+
 }

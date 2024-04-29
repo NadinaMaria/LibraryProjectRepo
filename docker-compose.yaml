@@ -1,24 +1,31 @@
 version: '3.4'
 services:
-  ceva:
-    image: appimage
-    container_name: app-image-container
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./target/LibraryProject-0.0.1-SNAPSHOT.jar/:/tmp/LibraryProject-0.0.1-SNAPSHOT.jar
-    command: ['java', '-jar', '/tmp/LibraryProject-0.0.1-SNAPSHOT.jar']
-#     restart: always
-
   databaseimage:
     image: cassandra
     container_name: database-container
     ports:
       - "9042:9042"
     volumes:
-      - ./data.cql/:/tmp/data.cql
-      - ./data.sh/:/tmp/data.sh
-#    entrypoint: ["sh", "-c", "chmod +x /tmp/data.sh", "sh /tmp/data.sh"]
+      - ./data.cql/:/data.cql
+      - ./data.sh/:/data.sh
+#     entrypoint: [ "/data.sh" ]
+#     command: ["/init.sh"]
+
+  appimage:
+    image: appimage
+    container_name: app-image-container
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./target/LibraryProject-0.0.1-SNAPSHOT.jar/:/tmp/LibraryProject-0.0.1-SNAPSHOT.jar
+    depends_on:
+      - databaseimage
+#     entrypoint: ["/bin/sh"]
+#     command: ['java', '-jar', '/tmp/LibraryProject-0.0.1-SNAPSHOT.jar']
+#     restart: always
+
+
+#     command: '/bin/sh /tmp/data.sh'
 #    command: tmp/data.cql
 #    command: /bin/sh /tmp/data.sh
 #    command: /bin/sh -c "data.sh"
