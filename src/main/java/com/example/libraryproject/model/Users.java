@@ -18,6 +18,12 @@ public class Users {
     private int id;
     private String username;
     private String password;
+    private String role;
+
+    public Users(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 //    private DateFormat creation;
 
 }

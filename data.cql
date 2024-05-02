@@ -5,19 +5,20 @@ CREATE KEYSPACE IF NOT EXISTS library WITH REPLICATION = { 'class' : 'SimpleStra
 CREATE TABLE IF NOT EXISTS library.users (
     id INT PRIMARY KEY,
     username text,
-    password text
+    password text,
+    role text
 );
 
 -- Insert some data
 INSERT INTO library.users
-(id, username, password)
-VALUES (999, 'JohnRobinson', 'john1');
+(id, username, password, role)
+VALUES (999, 'JohnRobinson', 'john1', 'admin');
 INSERT INTO library.users
-(id, username, password)
-VALUES (888, 'RyanAnderson', 'ryan1');
+(id, username, password, role)
+VALUES (888, 'RyanAnderson', 'ryan1', 'admin');
 INSERT INTO library.users
-(id, username, password)
-VALUES (777, 'BritAnderson', 'ryan1');
+(id, username, password, role)
+VALUES (777, 'BritAnderson', 'ryan1', 'user');
 
 
 CREATE TABLE IF NOT EXISTS library.books (
