@@ -4,7 +4,6 @@ import lombok.*;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
-import java.util.List;
 
 @Table
 @Data
@@ -19,12 +18,12 @@ public class Users {
     private int id;
     private String username;
     private String password;
+    private int roleId;
 
-    private Role role;
-
-    public Users(String username, String password) {
+    public Users(String username, String password, int roleId) {
         this.username = username;
         this.password = password;
+        this.roleId = roleId;
     }
 
 }

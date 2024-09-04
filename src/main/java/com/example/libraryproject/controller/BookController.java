@@ -23,6 +23,24 @@ public class BookController {
         return books;
     }
 
+    //Remove a book
+    @PostMapping("/delete-book")
+    public Books removeBook(@RequestBody Books book)
+    {
+        bookRepository.delete(book);
+        return (Books) bookRepository.findAll();
+    }
+
+    //Remove a book by title
+    @PostMapping("/delete-book-by-id/{id}")
+    public Books removeBookById(@PathVariable(value = "id") Integer bookId) {
+        Books books = bookRepository.findById(bookId).orElseThrow(
+                () -> new ResourceNotFound("Book doesn't exist"));
+        bookRepository.deleteById(bookId);
+        System.out.println("Deleted book" + books);
+        return (Books) bookRepository.findAll();
+    }
+
     //Get all books
     @GetMapping("/books2")
     public List<Books> getBooks() {

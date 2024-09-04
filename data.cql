@@ -6,19 +6,32 @@ CREATE TABLE IF NOT EXISTS library.users (
     id INT PRIMARY KEY,
     username text,
     password text,
-    role text
+    roleID INT
 );
+
+CREATE TABLE IF NOT EXISTS library.role (
+    id INT PRIMARY KEY,
+    name text
+);
+
+INSERT INTO library.role
+(id, name)
+VALUES (1, 'ADMIN');
+INSERT INTO library.role
+(id, name)
+VALUES (2, 'USER');
+
 
 -- Insert some data
 INSERT INTO library.users
-(id, username, password, role)
-VALUES (999, 'JohnRobinson', 'john1', 'admin');
+(id, username, password, roleID)
+VALUES (999, 'JohnRobinson', 'john1', 1);
 INSERT INTO library.users
-(id, username, password, role)
-VALUES (888, 'RyanAnderson', 'ryan1', 'admin');
+(id, username, password, roleID)
+VALUES (888, 'RyanAnderson', 'ryan1', 1);
 INSERT INTO library.users
-(id, username, password, role)
-VALUES (777, 'BritAnderson', 'ryan1', 'user');
+(id, username, password, roleID)
+VALUES (777, 'BritAnderson', 'ryan1', 1);
 
 
 CREATE TABLE IF NOT EXISTS library.books (
