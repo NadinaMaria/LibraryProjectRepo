@@ -20,12 +20,12 @@ public class LoggerMessage {
     @Override
     public String toString() {
         try {
-            return "LoggerMessage{" +
-                    "className='" + className + '\'' +
-                    ", methodName='" + methodName + '\'' +
-                    ", methodArgs='" + methodArgs + '\'' +
-                    ", timeTaken=" + timeTaken +
-                    ", result=" + new ObjectMapper().writeValueAsString(this.result) +
+            return "LoggerMessage{" + "\n\r" +
+                    "className=" + className + "\n\r" +
+                    "methodName=" + methodName + "\n\r"  +
+                    "methodArgs=" + methodArgs + "\n\r"  +
+                    "timeTaken=" + timeTaken + "\n\r"  +
+                    "result=" + new ObjectMapper().writeValueAsString(this.result) +
                     '}';
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
