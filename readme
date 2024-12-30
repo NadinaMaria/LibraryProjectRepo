@@ -1,0 +1,4 @@
+Steps to start it:
+1. docker compose up
+2. run manually data.sh from cassandra container
+3. start app container

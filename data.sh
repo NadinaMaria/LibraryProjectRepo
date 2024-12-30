@@ -1,4 +1,4 @@
 #!/bin/bash
 echo -e "Starting script"
-cqlsh -f /data.cql
+cqlsh -f data.cql
 echo "Done"
